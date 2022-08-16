@@ -54,15 +54,14 @@ app.use('/api/v1/student',studentRouter)
 app.use('/api/v1/company',companyRouter)
 app.use('/api/v1/job',jobRouter)
 
-
-//Middlewares That handles Route doesnt exist and Error
-app.use(errorHandlerMiddleware)
-app.use(notFoundMiddleware)
-
 //Homepage of API
 app.get('/',(req,res)=>{
   res.send('Jobify')
 });
+
+//Middlewares That handles Route doesnt exist and Error
+app.use(errorHandlerMiddleware)
+app.use(notFoundMiddleware)
 
 //To start my Beast!!!!
 const start = async () => {
